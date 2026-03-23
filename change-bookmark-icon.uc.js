@@ -1,4 +1,35 @@
-// ==UserScript==
+setTimeout(() => {
+  const menu = document.getElementById("placesContext");
+  if (!menu || menu.querySelector("#change-bookmark-icon")) return;
+
+  // Create XUL menu item using a fragment
+  const fragment = window.MozXULElement.parseXULToFragment(`
+    <menuitem id="change-bookmark-icon" label="Change Bookmark Icon…"/>
+  `);
+
+  // Insert before "Delete Bookmark" if it exists, otherwise append
+  const deleteItem = menu.querySelector("#placesContext_deleteBookmark");
+  if (deleteItem) {
+    deleteItem.before(fragment);
+  } else {
+    menu.appendChild(fragment);
+  }
+
+  // Add a single command listener for the menu
+  menu.addEventListener("command", (event) => {
+    if (event.target.id !== "change-bookmark-icon") return;
+
+    const triggerNode = menu.triggerNode;
+    if (!triggerNode || !triggerNode.classList.contains("bookmark-item")) {
+      console.error("No bookmark trigger node found");
+      return;
+    }
+
+    console.log("Clicked bookmark:", triggerNode.getAttribute("label"));
+    alert("Change icon for: " + triggerNode.getAttribute("label"));
+    // Your icon logic goes here
+  });
+}, 500); // adjust timeout if needed// ==UserScript==
 // @name           Bookmark Icons (Zen-style)
 // @ignorecache
 // ==/UserScript==
