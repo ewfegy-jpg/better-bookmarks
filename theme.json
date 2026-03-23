@@ -3,7 +3,7 @@
     "name": "Better bookmarks panel",
     "description": "Better bookmarks for Zen Browser",
     "scripts": {
-        "better-bookmarks.uc.js": {
+        "betterBookmarks.uc.js": {
             "include": [
                 "chrome://browser/content/browser.xhtml"
             ]
