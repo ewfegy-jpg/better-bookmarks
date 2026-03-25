@@ -1,13 +1,90 @@
-.bookmark-custom-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 16px;
-  height: 16px;
-  margin-right: 6px;
+#personal-bookmarks {
+min-width: 100% !important;
 }
 
-.bookmark-custom-icon img {
-  width: 100%;
-  height: 100%;
+#PlacesToolbarItems {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 2px;
+  overflow: visible !important;
+  margin-right: 5px !important;
+}
+
+toolbarbutton.bookmark-item:not(.subviewbutton) {
+  flex: 1 1 0 !important;      
+  min-width: 26px !important;  
+  max-width: 100% !important;
+  height: calc(var(--zen-toolbar-height) * 0.7);
+  background-color: var(--button-background-color-active) !important;
+  opacity: 0.8 !important;
+}
+
+toolbarbutton.bookmark-item:not(.subviewbutton):hover {
+  background-color: var(--button-background-color-hover) !important;
+  opacity: 1 !important;
+}
+
+.bookmark-item .toolbarbutton-icon {
+    margin: 0 auto !important;
+    display: block !important;
+    opacity: 0.75 !important;
+}
+.bookmark-item .toolbarbutton-text {
+    display: none !important;
+}
+
+
+:root[zen-single-toolbar="true"] #zen-sidebar-top-buttons {
+  --zen-toolbar-height: fit-content !important;
+}
+
+
+#zen-sidebar-top-buttons{
+  align-items: flex-start !important;
+}
+
+
+#zen-sidebar-top-buttons-customization-target {
+  min-height: 65px !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  height: auto !important;
+}
+
+
+.titlebar-buttonbox {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  height: 28px !important;
+
+}
+
+.titlebar-button{
+  padding: 8px 10px !important;
+  opacity: 0.5
+}
+
+.titlebar-button:hover{
+  opacity: 1
+}
+
+
+#back-button {
+  order: -2 !important;
+}
+
+#forward-button {
+   order: -1 !important;
+}
+
+#PanelUI-button {
+  order: -3 !important;
+  }
+
+
+#nav-bar-overflow-button {
+  position: absolute !important;
+  top: 0;
+  right: 85px;
 }
