@@ -1,17 +1,59 @@
-#personal-bookmarks {
-min-width: 100% !important;
+#OtherBookmarks {
+    display: none !important;
 }
+
+#PlacesToolbarItems .bookmark-item[container] { 
+   list-style-image: var(--bookmark-item-icon) !important;
+}
+
+#PlacesToolbarItems .bookmark-item .toolbarbutton-text {
+   display: none !important;
+}
+
+#PlacesToolbarItems .bookmark-item[style*="background-image"] {
+  background-size: 16px 16px !important; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  fill-opacity: 0.75 !important;
+} 
+
+#PlacesToolbarItems .bookmark-item[style*="background-image"] .toolbarbutton-icon {
+  display: none !important; 
+}
+
+menuitem.bookmark-item.menuitem-iconic.menuitem-with-favicon[style*="background-image"] {
+  background-image: none !important;
+}
+
+#PersonalToolbar {
+  min-height: 30px !important;
+  flex: 1 0 auto !important;
+  height: fit-content !important;
+  max-height: none !important;
+  margin-bottom: 5px !important;
+  padding-right: 0 !important;
+}
+
+#zen-main-app-wrapper[zen-compact-mode="true"] #PersonalToolbar {
+   flex: 0 1 auto !important;
+   order: -1 !important;
+}
+
+#personal-bookmarks {
+   width: 0 !important;
+   height: fit-content !important;
+}
+
 
 #PlacesToolbarItems {
   display: flex !important;
   flex-wrap: wrap !important;
   gap: 2px;
   overflow: visible !important;
-  margin-right: 5px !important;
 }
 
-toolbarbutton.bookmark-item:not(.subviewbutton) {
-  flex: 1 1 0 !important;      
+#PlacesToolbarItems toolbarbutton.bookmark-item:not(.subviewbutton) {
+  flex: 1 1 15% !important;      
   min-width: 26px !important;  
   max-width: 100% !important;
   height: calc(var(--zen-toolbar-height) * 0.7);
@@ -19,72 +61,18 @@ toolbarbutton.bookmark-item:not(.subviewbutton) {
   opacity: 0.8 !important;
 }
 
-toolbarbutton.bookmark-item:not(.subviewbutton):hover {
+#PlacesToolbarItems toolbarbutton.bookmark-item:not(.subviewbutton):hover {
   background-color: var(--button-background-color-hover) !important;
   opacity: 1 !important;
 }
 
-.bookmark-item .toolbarbutton-icon {
+#PlacesToolbarItems .bookmark-item .toolbarbutton-icon {
     margin: 0 auto !important;
-    display: block !important;
     opacity: 0.75 !important;
 }
-.bookmark-item .toolbarbutton-text {
-    display: none !important;
-}
 
 
-:root[zen-single-toolbar="true"] #zen-sidebar-top-buttons {
-  --zen-toolbar-height: fit-content !important;
-}
 
 
-#zen-sidebar-top-buttons{
-  align-items: flex-start !important;
-}
 
 
-#zen-sidebar-top-buttons-customization-target {
-  min-height: 65px !important;
-  flex-wrap: wrap !important;
-  align-items: flex-start !important;
-  height: auto !important;
-}
-
-
-.titlebar-buttonbox {
-  position: absolute !important;
-  top: 0 !important;
-  right: 0 !important;
-  height: 28px !important;
-
-}
-
-.titlebar-button{
-  padding: 8px 10px !important;
-  opacity: 0.5
-}
-
-.titlebar-button:hover{
-  opacity: 1
-}
-
-
-#back-button {
-  order: -2 !important;
-}
-
-#forward-button {
-   order: -1 !important;
-}
-
-#PanelUI-button {
-  order: -3 !important;
-  }
-
-
-#nav-bar-overflow-button {
-  position: absolute !important;
-  top: 0;
-  right: 85px;
-}
