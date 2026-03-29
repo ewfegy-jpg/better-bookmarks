@@ -21,7 +21,8 @@
   display: none !important; 
 }
 
-menuitem.bookmark-item.menuitem-iconic.menuitem-with-favicon[style*="background-image"] {
+menuitem.bookmark-item.menuitem-iconic.menuitem-with-favicon[style*="background-image"],
+toolbarbutton.subviewbutton.subviewbutton-iconic.bookmark-item[style*="background-image"] {
   background-image: none !important;
 }
 
